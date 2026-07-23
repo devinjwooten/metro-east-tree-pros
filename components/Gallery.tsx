@@ -3,7 +3,7 @@ import Image from "next/image";
 const projects = [
   {
     image: "/images/projects/project1.jpg",
-    title: "Tree Removal",
+    title: "Large Tree Removal",
     location: "Belleville, IL",
   },
   {
@@ -28,10 +28,49 @@ const projects = [
   },
   {
     image: "/images/projects/project6.jpg",
-    title: "Complete Cleanup",
+    title: "Property Cleanup",
     location: "Metro East",
   },
 ];
+
+function ProjectCard({
+  image,
+  title,
+  location,
+  large = false,
+}: {
+  image: string;
+  title: string;
+  location: string;
+  large?: boolean;
+}) {
+  return (
+    <div
+      className={`group relative overflow-hidden rounded-3xl shadow-xl ${
+        large ? "h-[520px]" : "h-[250px]"
+      }`}
+    >
+      <Image
+        src={image}
+        alt={title}
+        fill
+        className="object-cover transition duration-700 group-hover:scale-110"
+      />
+
+      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+
+      <div className="absolute bottom-0 left-0 p-8 text-white">
+        <span className="rounded-full bg-green-600 px-3 py-1 text-xs font-semibold uppercase tracking-wider">
+          Completed Project
+        </span>
+
+        <h3 className="mt-4 text-3xl font-bold">{title}</h3>
+
+        <p className="mt-2 text-gray-200">{location}</p>
+      </div>
+    </div>
+  );
+}
 
 export default function Gallery() {
   return (
@@ -40,50 +79,41 @@ export default function Gallery() {
 
         <div className="mb-16 text-center">
           <p className="text-sm font-bold uppercase tracking-[0.35em] text-green-700">
-            OUR RECENT PROJECTS
+            OUR RECENT WORK
           </p>
 
           <h2 className="mt-3 text-5xl font-black text-gray-900">
-            See Our Work
+            Results That Speak for Themselves
           </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-gray-600">
+          <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-600">
             Every project is completed with safety, professionalism,
-            and attention to detail.
+            and attention to detail. Here are a few examples of our
+            recent work throughout the Metro East.
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 lg:grid-cols-3">
 
-          {projects.map((project) => (
-            <div
-              key={project.title}
-              className="group overflow-hidden rounded-3xl shadow-lg"
-            >
-              <div className="relative h-80 overflow-hidden">
+          <div className="lg:col-span-2">
+            <ProjectCard {...projects[0]} large />
+          </div>
 
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition duration-500 group-hover:scale-110"
-                />
-
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-
-                <div className="absolute bottom-0 p-6 text-white">
-                  <h3 className="text-2xl font-bold">
-                    {project.title}
-                  </h3>
-
-                  <p>{project.location}</p>
-                </div>
-
-              </div>
-            </div>
-          ))}
+          <div className="space-y-6">
+            <ProjectCard {...projects[1]} />
+            <ProjectCard {...projects[2]} />
+          </div>
 
         </div>
+
+        <div className="mt-6 grid gap-6 md:grid-cols-3">
+
+          <ProjectCard {...projects[3]} />
+          <ProjectCard {...projects[4]} />
+          <ProjectCard {...projects[5]} />
+
+        </div>
+
       </div>
     </section>
   );
