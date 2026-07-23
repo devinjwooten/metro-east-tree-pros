@@ -4,6 +4,8 @@ import Services from "../components/Services";
 import WhyChooseUs from "../components/WhyChooseUs";
 import Stats from "../components/Stats";
 import Gallery from "../components/Gallery";
+import Reviews from "../components/Reviews";
+import Contact from "../components/Contact";
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
       <WhyChooseUs />
       <Stats />
       <Gallery />
+      <Reviews />
+      <Contact />
     </>
   );
 }
