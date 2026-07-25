@@ -1,220 +1,354 @@
+import Link from "next/link";
 import ServiceHero from "@/components/services/ServiceHero";
 
+const benefits = [
+  {
+    title: "Healthier, stronger growth",
+    text: "Selective pruning removes compromised limbs and gives the canopy the airflow and sunlight it needs to thrive.",
+  },
+  {
+    title: "A safer property",
+    text: "Addressing weak, dead, and overextended branches helps reduce risks around your home, driveway, and outdoor spaces.",
+  },
+  {
+    title: "A more polished landscape",
+    text: "Well-maintained trees frame your property beautifully and help preserve the curb appeal you have worked hard to create.",
+  },
+  {
+    title: "Better clearance",
+    text: "We create practical clearance from roofs, walkways, vehicles, and other structures while respecting the tree's natural form.",
+  },
+];
+
+const warningSigns = [
+  {
+    title: "Dead, cracked, or hanging limbs",
+    text: "Damaged branches can fail without warning, especially during high winds or heavy storms.",
+  },
+  {
+    title: "Branches against your roof",
+    text: "Overhanging limbs can wear on roofing materials and create convenient pathways for pests.",
+  },
+  {
+    title: "An overly dense canopy",
+    text: "Crowded growth limits light and air circulation, which can leave a tree more vulnerable to disease and breakage.",
+  },
+  {
+    title: "Low or obstructive growth",
+    text: "Limbs over driveways, sidewalks, patios, or signs can become a daily inconvenience and a safety concern.",
+  },
+];
+
+const seasonalCare = [
+  {
+    season: "Late winter",
+    text: "Dormant-season pruning is often ideal for shaping many deciduous trees before spring growth begins.",
+  },
+  {
+    season: "Spring & summer",
+    text: "We assess new growth, remove damaged limbs, and improve clearance where active landscapes need attention.",
+  },
+  {
+    season: "Fall",
+    text: "A proactive inspection helps identify weak branches before winter weather and storm season arrive.",
+  },
+];
+
+const faqs = [
+  {
+    question: "How often should trees be trimmed?",
+    answer:
+      "The right schedule depends on the tree species, age, health, and location. Many mature trees benefit from an inspection every few years, while fast-growing or high-traffic areas may need more frequent attention.",
+  },
+  {
+    question: "Can you trim branches near my house?",
+    answer:
+      "Yes. We plan each job around nearby structures, landscaping, and access points to safely create the clearance your property needs.",
+  },
+  {
+    question: "Is tree trimming safe in every season?",
+    answer:
+      "Emergency work can be performed when needed. For routine pruning, the best timing varies by species and the condition of the tree, so we will recommend an approach tailored to your property.",
+  },
+  {
+    question: "Do you remove branches and debris?",
+    answer:
+      "Yes. We include a thorough cleanup so your property is left neat and ready to enjoy when the work is complete.",
+  },
+  {
+    question: "Do you provide free estimates?",
+    answer:
+      "Absolutely. Contact Metro East Tree Pros to discuss your trimming needs and request a free estimate.",
+  },
+];
+
 export default function TreeTrimmingPage() {
-  const benefits = [
-    {
-      title: "Healthier Trees",
-      text: "Removing dead or diseased limbs encourages stronger, healthier growth.",
-    },
-    {
-      title: "Improved Appearance",
-      text: "Proper pruning gives your landscape a clean, well-maintained look.",
-    },
-    {
-      title: "Increased Safety",
-      text: "Trimming weak or damaged branches helps reduce potential hazards.",
-    },
-    {
-      title: "Better Clearance",
-      text: "Maintain safe distances from roofs, driveways, sidewalks, and utility lines.",
-    },
-  ];
-
-  const warningSigns = [
-    {
-      title: "Dead or Broken Branches",
-      text: "Dead limbs can fall unexpectedly and should be removed to help improve safety.",
-    },
-    {
-      title: "Branches Touching Your Roof",
-      text: "Overhanging branches can scrape roofing materials and provide easy access for pests.",
-    },
-    {
-      title: "Dense, Overgrown Canopy",
-      text: "Thinning the canopy allows better airflow and sunlight, promoting healthier growth.",
-    },
-    {
-      title: "Low-Hanging Limbs",
-      text: "Branches over sidewalks, driveways, or patios can become an obstacle and safety concern.",
-    },
-  ];
-
   return (
-    <main className="bg-white">
+    <main className="bg-white text-gray-900">
       <ServiceHero
         title="Professional Tree Trimming & Pruning"
-        subtitle="Routine tree trimming helps improve appearance, encourage healthy growth, and reduce potential hazards caused by overgrown or damaged branches."
+        subtitle="Thoughtful pruning for healthier trees, safer properties, and a landscape that looks cared for in every season."
         image="/images/services/tree-trimming-hero.jpg"
       />
 
-      {/* Intro */}
-
-      <section className="py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <p className="text-sm font-bold uppercase tracking-[0.3em] text-green-700">
-            TREE TRIMMING
-          </p>
-
-          <h2 className="mt-4 text-5xl font-black">
-            Why Regular Tree Trimming Matters
-          </h2>
-
-          <p className="mt-8 max-w-3xl text-lg leading-9 text-gray-600">
-            Proper tree trimming is about more than appearance. Removing dead,
-            damaged, or overgrown branches can improve tree health, increase
-            safety, and help maintain the beauty of your property throughout the
-            year.
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-green-700">
+              Tree Trimming
+            </p>
+            <h2 className="mt-5 max-w-3xl text-4xl font-black leading-tight sm:text-5xl">
+              Care that protects the tree and the property around it.
+            </h2>
+          </div>
+          <p className="text-lg leading-8 text-gray-600">
+            Proper trimming is never just about cutting branches. Our team
+            evaluates the condition, structure, and surroundings of every tree
+            to make smart recommendations that support long-term health and
+            improve day-to-day safety.
           </p>
         </div>
       </section>
 
-      {/* Benefits */}
-
-      <section className="bg-slate-50 py-24">
+      <section className="bg-slate-50 py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-16 text-center">
+          <div className="max-w-3xl">
             <p className="text-sm font-bold uppercase tracking-[0.3em] text-green-700">
-              BENEFITS
+              The Benefits
             </p>
-
-            <h2 className="mt-5 text-5xl font-black">
-              Benefits of
-              <span className="text-green-700">
-                {" "}
-                Professional Tree Trimming
-              </span>
+            <h2 className="mt-5 text-4xl font-black leading-tight sm:text-5xl">
+              A better-looking property starts with healthier trees.
             </h2>
-
-            <p className="mx-auto mt-6 max-w-3xl text-lg leading-9 text-gray-600">
-              Regular maintenance helps keep your trees healthy while protecting
-              your home and improving curb appeal.
-            </p>
           </div>
 
-          <div className="grid gap-8 md:grid-cols-2">
-            {benefits.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-3xl bg-white p-8 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
+          <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+            {benefits.map((benefit, index) => (
+              <article
+                key={benefit.title}
+                className="rounded-3xl bg-white p-8 shadow-lg shadow-slate-200/60 transition duration-300 hover:-translate-y-1 hover:shadow-xl"
               >
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-green-700 text-2xl text-white">
-                  🌿
-                </div>
-
-                <h3 className="text-2xl font-bold">{item.title}</h3>
-
-                <p className="mt-4 leading-8 text-gray-600">{item.text}</p>
-              </div>
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-green-700 text-lg font-black text-white">
+                  0{index + 1}
+                </span>
+                <h3 className="mt-7 text-2xl font-bold">{benefit.title}</h3>
+                <p className="mt-4 leading-8 text-gray-600">{benefit.text}</p>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Warning Signs */}
-
-      <section className="py-24">
+      <section className="py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <div className="mb-16 text-center">
-            <p className="text-sm font-bold uppercase tracking-[0.3em] text-green-700">
-              WARNING SIGNS
-            </p>
-
-            <h2 className="mt-5 text-5xl font-black">
-              Signs Your Tree
-              <span className="text-green-700"> Needs Trimming</span>
-            </h2>
-
-            <p className="mx-auto mt-6 max-w-3xl text-lg leading-9 text-gray-600">
-              Trees often give clear signs when they need attention. Regular
-              trimming helps maintain healthy growth, improves safety, and keeps
-              your property looking its best.
-            </p>
-          </div>
-
-          <div className="grid gap-8 md:grid-cols-2">
-            {warningSigns.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-3xl border border-gray-100 bg-white p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl"
-              >
-                <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-green-700 text-2xl text-white">
-                  🌳
-                </div>
-
-                <h3 className="text-2xl font-bold text-gray-900">
-                  {item.title}
-                </h3>
-
-                <p className="mt-4 leading-8 text-gray-600">{item.text}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-      <section className="bg-slate-50 py-24">
-  <div className="mx-auto max-w-7xl px-6">
-    <div className="grid items-center gap-20 lg:grid-cols-2">
-      {/* Left */}
-
-      <div className="relative">
-        <img
-          src="/images/services/tree-trimming-benefits.jpg"
-          alt="Professional tree trimming"
-          className="rounded-[32px] shadow-2xl"
-        />
-
-        <div className="absolute -bottom-8 -right-8 rounded-3xl bg-green-700 p-8 text-white shadow-xl">
-          <p className="text-4xl font-black">
-            Year-Round
-          </p>
-
-          <p className="mt-2 max-w-[180px]">
-            Proper maintenance helps trees stay healthier in every season.
-          </p>
-        </div>
-      </div>
-
-      {/* Right */}
-
-      <div>
-        <p className="text-sm font-bold uppercase tracking-[0.3em] text-green-700">
-          TIMING MATTERS
-        </p>
-
-        <h2 className="mt-5 text-5xl font-black">
-          When Is The Best Time
-          <span className="text-green-700"> To Trim Trees?</span>
-        </h2>
-
-        <p className="mt-8 text-lg leading-9 text-gray-600">
-          While emergency trimming can happen at any time, routine pruning is
-          often scheduled to encourage healthy growth and reduce future
-          maintenance issues. Every tree species has different needs, which is
-          why proper timing is important.
-        </p>
-
-        <div className="mt-12 space-y-6">
-          {[
-            "Improve long-term tree health",
-            "Reduce the chance of storm damage",
-            "Encourage balanced growth",
-            "Maintain a neat, attractive landscape",
-          ].map((item) => (
-            <div key={item} className="flex items-center gap-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-700 text-white">
-                ✓
-              </div>
-
-              <p className="text-lg text-gray-700">
-                {item}
+          <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
+            <div className="rounded-[2rem] bg-green-700 p-9 text-white sm:p-12">
+              <p className="text-sm font-bold uppercase tracking-[0.3em] text-green-200">
+                Know the Signs
+              </p>
+              <h2 className="mt-5 text-4xl font-black leading-tight sm:text-5xl">
+                When does a tree need trimming?
+              </h2>
+              <p className="mt-7 text-lg leading-8 text-green-50">
+                Small issues are often easier to address before they become a
+                major concern. If something about your tree looks different or
+                feels unsafe, a professional assessment is a smart next step.
               </p>
             </div>
-          ))}
+
+            <div className="grid gap-5 sm:grid-cols-2">
+              {warningSigns.map((sign) => (
+                <article
+                  key={sign.title}
+                  className="rounded-3xl border border-gray-100 p-7 shadow-sm"
+                >
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 font-black text-green-700">
+                    ✓
+                  </div>
+                  <h3 className="mt-5 text-xl font-bold">{sign.title}</h3>
+                  <p className="mt-3 leading-7 text-gray-600">{sign.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
+
+      <section className="bg-slate-50 py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="text-center">
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-green-700">
+              Services for Every Property
+            </p>
+            <h2 className="mt-5 text-4xl font-black leading-tight sm:text-5xl">
+              Tree care built around how you use your space.
+            </h2>
+          </div>
+
+          <div className="mt-12 grid gap-8 lg:grid-cols-2">
+            <article className="rounded-[2rem] bg-white p-9 shadow-lg shadow-slate-200/60 sm:p-10">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-green-700">
+                Residential Tree Trimming
+              </p>
+              <h3 className="mt-4 text-3xl font-black">Make home feel safer and more inviting.</h3>
+              <p className="mt-6 leading-8 text-gray-600">
+                From a branch brushing the roof to a canopy blocking your garden
+                light, we help homeowners improve safety, curb appeal, and the
+                health of the trees they enjoy every day.
+              </p>
+              <ul className="mt-7 space-y-3 text-gray-700">
+                <li>• Roof, driveway, and walkway clearance</li>
+                <li>• Canopy thinning and structural pruning</li>
+                <li>• Storm-damaged limb removal and cleanup</li>
+              </ul>
+            </article>
+
+            <article className="rounded-[2rem] bg-gray-900 p-9 text-white shadow-lg sm:p-10">
+              <p className="text-sm font-bold uppercase tracking-[0.2em] text-green-400">
+                Commercial Tree Trimming
+              </p>
+              <h3 className="mt-4 text-3xl font-black">Keep your property accessible and presentable.</h3>
+              <p className="mt-6 leading-8 text-gray-300">
+                Businesses and property managers need dependable tree care that
+                respects tenants, customers, schedules, and the appearance of
+                the site. We help keep trees maintained without unnecessary
+                disruption.
+              </p>
+              <ul className="mt-7 space-y-3 text-gray-200">
+                <li>• Parking, signage, and building clearance</li>
+                <li>• Routine maintenance planning</li>
+                <li>• Professional cleanup for a polished finish</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.3em] text-green-700">
+                Seasonal Tree Care
+              </p>
+              <h2 className="mt-5 text-4xl font-black leading-tight sm:text-5xl">
+                The right timing makes a meaningful difference.
+              </h2>
+              <p className="mt-7 text-lg leading-8 text-gray-600">
+                Tree needs change throughout the year. We consider species,
+                weather, growth patterns, and your goals when recommending the
+                right time for routine maintenance.
+              </p>
+            </div>
+
+            <div className="space-y-4">
+              {seasonalCare.map((item, index) => (
+                <article
+                  key={item.season}
+                  className="flex gap-5 rounded-3xl border border-gray-100 p-6 transition hover:border-green-200 hover:bg-green-50/40"
+                >
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-green-700 font-black text-white">
+                    0{index + 1}
+                  </span>
+                  <div>
+                    <h3 className="text-xl font-bold">{item.season}</h3>
+                    <p className="mt-2 leading-7 text-gray-600">{item.text}</p>
+                  </div>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="grid gap-12 rounded-[2rem] bg-white p-8 shadow-xl shadow-slate-200/60 lg:grid-cols-[1fr_1.2fr] lg:p-14">
+            <div>
+              <p className="text-sm font-bold uppercase tracking-[0.3em] text-green-700">
+                Why Metro East Tree Pros
+              </p>
+              <h2 className="mt-5 text-4xl font-black leading-tight sm:text-5xl">
+                Straightforward guidance. Detail-focused work.
+              </h2>
+            </div>
+            <div className="grid gap-6 sm:grid-cols-2">
+              {[
+                "Recommendations tailored to your trees and property",
+                "A safety-first approach from planning through cleanup",
+                "Clear communication and a hassle-free estimate process",
+                "Respect for your landscape, time, and surrounding space",
+              ].map((reason) => (
+                <p key={reason} className="flex gap-3 leading-7 text-gray-600">
+                  <span className="font-black text-green-700">✓</span>
+                  {reason}
+                </p>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 sm:py-24">
+        <div className="mx-auto max-w-5xl px-6">
+          <div className="text-center">
+            <p className="text-sm font-bold uppercase tracking-[0.3em] text-green-700">
+              Frequently Asked Questions
+            </p>
+            <h2 className="mt-5 text-4xl font-black leading-tight sm:text-5xl">
+              Tree trimming answers, made simple.
+            </h2>
+          </div>
+
+          <div className="mt-12 space-y-4">
+            {faqs.map((faq) => (
+              <details
+                key={faq.question}
+                className="group rounded-2xl border border-gray-200 bg-white px-6 py-5 shadow-sm transition hover:border-green-200 hover:shadow-md"
+              >
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-6 text-left text-lg font-bold">
+                  {faq.question}
+                  <span className="text-2xl text-green-700 transition-transform group-open:rotate-45">
+                    +
+                  </span>
+                </summary>
+                <p className="mt-4 max-w-3xl leading-8 text-gray-600">
+                  {faq.answer}
+                </p>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-green-700 py-20 text-white sm:py-24">
+        <div className="mx-auto max-w-5xl px-6 text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.3em] text-green-200">
+            Ready When You Are
+          </p>
+          <h2 className="mt-5 text-4xl font-black leading-tight sm:text-5xl">
+            Give your trees the care they deserve.
+          </h2>
+          <p className="mx-auto mt-7 max-w-3xl text-lg leading-8 text-green-50">
+            Tell us what you are seeing on your property. Metro East Tree Pros
+            will help you understand the next best step and provide a free,
+            no-pressure estimate.
+          </p>
+          <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
+            <Link
+              href="/contact"
+              className="rounded-xl bg-white px-8 py-4 text-lg font-bold text-green-700 transition hover:bg-green-50"
+            >
+              Request a Free Estimate
+            </Link>
+            <Link
+              href="tel:3144747087"
+              className="rounded-xl border-2 border-white px-8 py-4 text-lg font-bold transition hover:bg-white hover:text-green-700"
+            >
+              Call (314) 474-7087
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
