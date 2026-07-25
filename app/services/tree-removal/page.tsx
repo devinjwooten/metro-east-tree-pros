@@ -315,6 +315,39 @@ export default function TreeRemovalPage() {
           </p>
         </details>
       ))}
+      <section className="bg-green-700 py-24 text-white">
+  <div className="mx-auto max-w-5xl px-6 text-center">
+    <p className="text-sm font-bold uppercase tracking-[0.3em] text-green-200">
+      READY TO GET STARTED?
+    </p>
+
+    <h2 className="mt-5 text-5xl font-black">
+      Request Your Free Tree Removal Estimate
+    </h2>
+
+    <p className="mx-auto mt-8 max-w-3xl text-lg leading-9 text-green-100">
+      Whether you're dealing with storm damage, a hazardous tree, or planning a
+      property improvement project, we're here to help make the process simple
+      from start to finish.
+    </p>
+
+    <div className="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
+      <a
+        href="/contact"
+        className="rounded-xl bg-white px-8 py-4 text-lg font-bold text-green-700 transition hover:bg-gray-100"
+      >
+        Request a Free Estimate
+      </a>
+
+      <a
+        href="tel:3144747087"
+        className="rounded-xl border-2 border-white px-8 py-4 text-lg font-bold transition hover:bg-white hover:text-green-700"
+      >
+        Call Now
+      </a>
+    </div>
+  </div>
+</section>
     </div>
   </div>
 </section>
