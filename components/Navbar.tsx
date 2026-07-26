@@ -1,10 +1,11 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
     <header className="fixed top-0 left-0 z-50 w-full border-b border-gray-200 bg-white/95 backdrop-blur">
       <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6">
-        <a href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
           <Image
             src="/images/logo.png"
             alt="Metro East Tree Pros"
@@ -14,15 +15,15 @@ export default function Navbar() {
           />
 
           <div className="hidden sm:block">
-            <h1 className="text-xl font-bold text-green-800">
+            <span className="text-xl font-bold text-green-800">
               Metro East Tree Pros
-            </h1>
+            </span>
 
             <p className="text-sm text-gray-600">
               Professional Tree Care You Can Trust
             </p>
           </div>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-8 font-medium md:flex">
           <a href="#services" className="hover:text-green-700">

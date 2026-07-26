@@ -1,121 +1,78 @@
-import {
-  Phone,
-  Mail,
-  MapPin,
-  Clock,
-} from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Clock, Mail, MapPin, Phone } from "lucide-react";
+
+const contactOptions = [
+  {
+    icon: Phone,
+    label: "Call for a free estimate",
+    detail: "(314) 474-7087",
+    href: "tel:3144747087",
+  },
+  {
+    icon: Mail,
+    label: "Send us an email",
+    detail: "info@metroeasttreepros.com",
+    href: "mailto:info@metroeasttreepros.com",
+  },
+];
 
 export default function Contact() {
   return (
-    <section
-      id="contact"
-      className="bg-gradient-to-br from-green-700 to-green-900 py-24 text-white"
-    >
-      <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-2">
-
-        {/* Left Side */}
-
+    <section id="contact" className="bg-white py-20 sm:py-24">
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         <div>
-
-          <p className="text-sm font-bold uppercase tracking-[0.35em] text-green-200">
-            FREE ESTIMATE
+          <p className="text-sm font-bold uppercase tracking-[0.3em] text-green-700">
+            Request a Free Estimate
           </p>
-
-          <h2 className="mt-4 text-5xl font-black leading-tight">
-            Ready to Remove
-            <br />
-            That Tree?
+          <h2 className="mt-5 text-4xl font-black leading-tight sm:text-5xl">
+            Start with the option that is easiest for you.
           </h2>
-
-          <p className="mt-8 text-lg leading-8 text-green-100">
-            Whether it's dangerous, damaged, or simply needs trimming,
-            Metro East Tree Pros is ready to help.
-            Contact us today for a free estimate.
+          <p className="mt-7 text-lg leading-8 text-gray-600">
+            Tell us what you are seeing on your property, where the work is
+            needed, and whether there is an immediate safety concern. We will
+            help you understand the next best step.
           </p>
 
-          <div className="mt-12 space-y-6">
-
-            <div className="flex items-center gap-4">
-              <Phone className="h-7 w-7 text-yellow-400" />
-              <span className="text-xl">(314) 474-7087</span>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <Mail className="h-7 w-7 text-yellow-400" />
-              <span>info@metroeasttreepros.com</span>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <MapPin className="h-7 w-7 text-yellow-400" />
-              <span>
-                Belleville • O'Fallon • Collinsville •
-                Edwardsville • Fairview Heights
-              </span>
-            </div>
-
-            <div className="flex items-center gap-4">
-              <Clock className="h-7 w-7 text-yellow-400" />
-              <span>24/7 Emergency Service Available</span>
-            </div>
-
+          <div className="mt-10 space-y-5 text-gray-700">
+            <p className="flex gap-4">
+              <MapPin className="h-6 w-6 shrink-0 text-green-700" aria-hidden="true" />
+              Serving the Metro East and nearby communities
+            </p>
+            <p className="flex gap-4">
+              <Clock className="h-6 w-6 shrink-0 text-green-700" aria-hidden="true" />
+              Emergency service is available when conditions require it
+            </p>
           </div>
-
         </div>
 
-        {/* Right Side */}
+        <div className="grid gap-5 sm:grid-cols-2">
+          {contactOptions.map((option) => {
+            const Icon = option.icon;
 
-        <div className="rounded-3xl bg-white p-10 shadow-2xl">
-
-          <h3 className="mb-8 text-3xl font-bold text-gray-900">
-            Request Your Free Estimate
-          </h3>
-
-          <form className="space-y-6">
-
-            <input
-              type="text"
-              placeholder="Full Name"
-              className="w-full rounded-xl border p-4 text-gray-900"
-            />
-
-            <input
-              type="tel"
-              placeholder="Phone Number"
-              className="w-full rounded-xl border p-4 text-gray-900"
-            />
-
-            <input
-              type="email"
-              placeholder="Email Address"
-              className="w-full rounded-xl border p-4 text-gray-900"
-            />
-
-            <select
-              className="w-full rounded-xl border p-4 text-gray-900"
-            >
-              <option>Tree Removal</option>
-              <option>Tree Trimming</option>
-              <option>Stump Grinding</option>
-              <option>Emergency Service</option>
-              <option>Other</option>
-            </select>
-
-            <textarea
-              rows={5}
-              placeholder="Tell us about your project..."
-              className="w-full rounded-xl border p-4 text-gray-900"
-            />
-
-            <button
-              className="w-full rounded-xl bg-green-700 py-5 text-lg font-bold transition hover:bg-green-800"
-            >
-              Request Free Estimate
-            </button>
-
-          </form>
-
+            return (
+              <Link
+                key={option.href}
+                href={option.href}
+                className="group rounded-[2rem] border border-gray-100 bg-slate-50 p-8 shadow-lg shadow-slate-200/60 transition duration-300 hover:-translate-y-1 hover:border-green-200 hover:shadow-xl"
+              >
+                <Icon className="h-8 w-8 text-green-700" aria-hidden="true" />
+                <p className="mt-8 text-sm font-bold uppercase tracking-[0.18em] text-green-700">
+                  {option.label}
+                </p>
+                <p className="mt-3 break-words text-2xl font-black text-gray-900">
+                  {option.detail}
+                </p>
+                <span className="mt-7 inline-flex items-center font-bold text-green-700">
+                  Contact us now
+                  <ArrowRight
+                    className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
+                    aria-hidden="true"
+                  />
+                </span>
+              </Link>
+            );
+          })}
         </div>
-
       </div>
     </section>
   );

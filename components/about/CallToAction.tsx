@@ -23,13 +23,13 @@ export default function CallToAction() {
           </p>
 
           <h2 className="mt-6 text-5xl font-black leading-tight md:text-6xl">
-            Let's Make Your Tree Project
+            Let&apos;s Make Your Tree Project
             <span className="text-green-400"> Simple.</span>
           </h2>
 
           <p className="mx-auto mt-8 max-w-2xl text-xl leading-9 text-gray-300">
             Whether you need tree removal, trimming, stump grinding, or storm
-            cleanup, we're here to help make the process straightforward from
+            cleanup, we&apos;re here to help make the process straightforward from
             your first call to the final cleanup.
           </p>
 

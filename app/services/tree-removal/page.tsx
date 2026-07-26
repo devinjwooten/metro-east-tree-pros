@@ -1,3 +1,4 @@
+import Image from "next/image";
 import ServiceHero from "@/components/services/ServiceHero";
 
 export default function TreeRemovalPage() {
@@ -166,9 +167,11 @@ export default function TreeRemovalPage() {
       {/* Right */}
 
       <div className="relative">
-        <img
+        <Image
           src="/images/services/tree-removal-benefits.jpg"
           alt="Professional tree removal"
+          width={900}
+          height={700}
           className="rounded-[32px] shadow-2xl"
         />
 
@@ -199,7 +202,7 @@ export default function TreeRemovalPage() {
       </h2>
 
       <p className="mx-auto mt-6 max-w-3xl text-lg leading-9 text-gray-600">
-        We believe tree service should be simple and organized. Here's what the
+        We believe tree service should be simple and organized. Here&apos;s what the
         process looks like from your first call through project completion.
       </p>
     </div>
@@ -326,8 +329,8 @@ export default function TreeRemovalPage() {
     </h2>
 
     <p className="mx-auto mt-8 max-w-3xl text-lg leading-9 text-green-100">
-      Whether you're dealing with storm damage, a hazardous tree, or planning a
-      property improvement project, we're here to help make the process simple
+      Whether you&apos;re dealing with storm damage, a hazardous tree, or planning a
+      property improvement project, we&apos;re here to help make the process simple
       from start to finish.
     </p>
 

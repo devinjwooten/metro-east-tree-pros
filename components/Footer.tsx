@@ -73,7 +73,7 @@ export default function Footer() {
             <div className="flex items-start gap-3">
               <MapPin size={18} className="mt-1" />
               <span>
-                Serving Belleville, O'Fallon,
+                Serving Belleville, O&apos;Fallon,
                 Collinsville, Edwardsville,
                 Fairview Heights & surrounding areas.
               </span>

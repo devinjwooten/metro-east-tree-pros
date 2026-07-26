@@ -36,7 +36,7 @@ export default function AboutHero() {
           </h1>
 
           <p className="mt-8 max-w-2xl text-xl leading-9 text-gray-200">
-            Tree service doesn't have to be complicated. We focus on clear
+            Tree service does not have to be complicated. We focus on clear
             communication, dependable coordination, and a smooth customer
             experience from your first estimate request through project
             completion.

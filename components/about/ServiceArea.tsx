@@ -45,7 +45,7 @@ export default function ServiceArea() {
             <p className="mt-8 text-lg leading-9 text-gray-600">
               Whether you need tree removal, trimming,
               stump grinding, storm cleanup, or emergency
-              tree service, we're proud to help homeowners
+              tree service, we&apos;re proud to help homeowners
               throughout the Metro East with dependable,
               professional service.
             </p>

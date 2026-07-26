@@ -39,15 +39,15 @@ export default function Mission() {
           </h2>
 
           <p className="mt-8 text-lg leading-9 text-gray-600">
-            We believe homeowners deserve a tree service experience that's
+            We believe homeowners deserve a tree service experience that&apos;s
             straightforward, responsive, and easy to understand. From your
             first phone call to the final cleanup, our goal is to keep the
             process organized and stress-free.
           </p>
 
           <p className="mt-8 text-lg leading-9 text-gray-600">
-            Whether you're dealing with a hazardous tree, routine trimming,
-            storm damage, or stump removal, we're committed to providing clear
+            Whether you&apos;re dealing with a hazardous tree, routine trimming,
+            storm damage, or stump removal, we&apos;re committed to providing clear
             communication and dependable coordination every step of the way.
           </p>
 
