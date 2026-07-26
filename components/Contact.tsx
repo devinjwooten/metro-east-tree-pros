@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, Clock, Mail, MapPin, Phone } from "lucide-react";
+import EstimateRequest from "@/components/EstimateRequest";
 
 const contactOptions = [
   {
@@ -19,7 +20,8 @@ const contactOptions = [
 export default function Contact() {
   return (
     <section id="contact" className="bg-white py-20 sm:py-24">
-      <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+      <div className="mx-auto max-w-7xl px-6">
+        <div className="grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
         <div>
           <p className="text-sm font-bold uppercase tracking-[0.3em] text-green-700">
             Request a Free Estimate
@@ -72,6 +74,11 @@ export default function Contact() {
               </Link>
             );
           })}
+        </div>
+        </div>
+
+        <div className="mt-12">
+          <EstimateRequest />
         </div>
       </div>
     </section>

@@ -28,7 +28,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-white text-gray-900 antialiased">
+      <body className="bg-white pb-20 text-gray-900 antialiased lg:pb-0">
         <Navbar />
 
         {children}

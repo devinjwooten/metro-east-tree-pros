@@ -1,5 +1,6 @@
 import Link from "next/link";
 import ServiceHero from "@/components/services/ServiceHero";
+import EstimateRequest from "@/components/EstimateRequest";
 
 const benefits = [
   {
@@ -317,6 +318,12 @@ export default function TreeTrimmingPage() {
               </details>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-slate-50 py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <EstimateRequest />
         </div>
       </section>
 

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { AlertTriangle, ArrowRight, Phone } from "lucide-react";
 import ServiceHero from "@/components/services/ServiceHero";
+import EstimateRequest from "@/components/EstimateRequest";
 
 const priorities = [
   {
@@ -200,6 +201,12 @@ export default function StormCleanupPage() {
               </details>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <EstimateRequest />
         </div>
       </section>
 

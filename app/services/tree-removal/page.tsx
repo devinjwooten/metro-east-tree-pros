@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ServiceHero from "@/components/services/ServiceHero";
+import EstimateRequest from "@/components/EstimateRequest";
 
 export default function TreeRemovalPage() {
   return (
@@ -318,6 +319,16 @@ export default function TreeRemovalPage() {
           </p>
         </details>
       ))}
+      </div>
+    </div>
+  </section>
+
+      <section className="bg-slate-50 py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <EstimateRequest />
+        </div>
+      </section>
+
       <section className="bg-green-700 py-24 text-white">
   <div className="mx-auto max-w-5xl px-6 text-center">
     <p className="text-sm font-bold uppercase tracking-[0.3em] text-green-200">
@@ -348,9 +359,6 @@ export default function TreeRemovalPage() {
       >
         Call Now
       </a>
-    </div>
-  </div>
-</section>
     </div>
   </div>
 </section>

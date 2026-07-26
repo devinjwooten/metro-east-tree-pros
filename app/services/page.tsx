@@ -7,6 +7,7 @@ import {
   ShieldAlert,
   ArrowRight,
 } from "lucide-react";
+import EstimateRequest from "@/components/EstimateRequest";
 
 const services = [
   {
@@ -101,6 +102,12 @@ export default function ServicesPage() {
               </div>
             );
           })}
+        </div>
+      </section>
+
+      <section className="bg-slate-50 py-20 sm:py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <EstimateRequest />
         </div>
       </section>
     </main>
