@@ -3,45 +3,37 @@ import Image from "next/image";
 const projects = [
   {
     image: "/images/projects/project1.jpg",
-    title: "Large Tree Removal",
-    location: "Belleville, IL",
+    title: "Tree Removal Example",
   },
   {
     image: "/images/projects/project2.jpg",
-    title: "Tree Trimming",
-    location: "O'Fallon, IL",
+    title: "Tree Trimming Example",
   },
   {
     image: "/images/projects/project3.jpg",
-    title: "Storm Cleanup",
-    location: "Fairview Heights, IL",
+    title: "Storm Cleanup Example",
   },
   {
     image: "/images/projects/project4.jpg",
-    title: "Stump Grinding",
-    location: "Collinsville, IL",
+    title: "Stump Grinding Example",
   },
   {
     image: "/images/projects/project5.jpg",
-    title: "Emergency Removal",
-    location: "Edwardsville, IL",
+    title: "Emergency Tree Service Example",
   },
   {
     image: "/images/projects/project6.jpg",
-    title: "Property Cleanup",
-    location: "Metro East",
+    title: "Property Cleanup Example",
   },
 ];
 
 function ProjectCard({
   image,
   title,
-  location,
   large = false,
 }: {
   image: string;
   title: string;
-  location: string;
   large?: boolean;
 }) {
   return (
@@ -52,7 +44,7 @@ function ProjectCard({
     >
       <Image
         src={image}
-        alt={title}
+        alt={`Sample visual for ${title.toLowerCase()}`}
         fill
         className="object-cover transition duration-700 group-hover:scale-110"
       />
@@ -61,12 +53,12 @@ function ProjectCard({
 
       <div className="absolute bottom-0 left-0 p-8 text-white">
         <span className="rounded-full bg-green-600 px-3 py-1 text-xs font-semibold uppercase tracking-wider">
-          Completed Project
+          Sample Visual
         </span>
 
         <h3 className="mt-4 text-3xl font-bold">{title}</h3>
 
-        <p className="mt-2 text-gray-200">{location}</p>
+        <p className="mt-2 text-gray-200">Replace with a verified local project before launch.</p>
       </div>
     </div>
   );
@@ -79,17 +71,17 @@ export default function Gallery() {
 
         <div className="mb-16 text-center">
           <p className="text-sm font-bold uppercase tracking-[0.35em] text-green-700">
-            OUR RECENT WORK
+            VISUAL EXAMPLES
           </p>
 
           <h2 className="mt-3 text-5xl font-black text-gray-900">
-            Results That Speak for Themselves
+            A look at the work we handle.
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-600">
-            Every project is completed with safety, professionalism,
-            and attention to detail. Here are a few examples of our
-            recent work throughout the Metro East.
+            These sample visuals illustrate the types of tree-service projects
+            Metro East Tree Pros handles. Replace them with approved project
+            photos and verified details before launch.
           </p>
         </div>
 

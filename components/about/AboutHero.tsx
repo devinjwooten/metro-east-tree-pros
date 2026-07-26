@@ -13,7 +13,7 @@ export default function AboutHero() {
     <section className="relative isolate min-h-[92vh] overflow-hidden">
       <Image
         src="/images/about/about-hero.jpg"
-        alt="Metro East Tree Pros"
+        alt="Professional tree-service crew standing beside organized equipment"
         fill
         priority
         sizes="100vw"

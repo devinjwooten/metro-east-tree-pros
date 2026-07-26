@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   AlertTriangle,
@@ -7,6 +8,19 @@ import {
 } from "lucide-react";
 import ServiceHero from "@/components/services/ServiceHero";
 import EstimateRequest from "@/components/EstimateRequest";
+import {
+  createFaqJsonLd,
+  createPageMetadata,
+  createServiceJsonLd,
+  serializeJsonLd,
+} from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Emergency Tree Service in Metro East, Illinois",
+  description:
+    "Safety-focused emergency tree service for fallen trees, dangerous limbs, blocked access, and storm damage throughout the Metro East, Illinois.",
+  path: "/services/emergency-tree-service",
+});
 
 const urgentSituations = [
   {
@@ -122,10 +136,28 @@ const faqs = [
 export default function EmergencyTreeServicePage() {
   return (
     <main className="bg-white text-gray-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeJsonLd(
+            createServiceJsonLd({
+              name: "Emergency Tree Service",
+              description:
+                "Safety-focused emergency tree service for fallen trees, dangerous limbs, blocked access, and storm damage throughout the Metro East, Illinois.",
+              path: "/services/emergency-tree-service",
+            }),
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(createFaqJsonLd(faqs)) }}
+      />
       <ServiceHero
         title="24/7 Emergency Tree Service"
         subtitle="Fast storm damage response and safety-focused tree care when your Metro East property cannot wait."
-        image="/images/services/tree-removal-hero.jpg"
+        image="/images/services/emergency-tree-service-hero.jpg"
+        imageAlt="Tree-service crew safely stabilizing a storm-damaged tree"
       />
 
       <section className="py-20 sm:py-24">

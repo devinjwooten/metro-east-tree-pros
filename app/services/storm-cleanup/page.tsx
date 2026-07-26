@@ -3,6 +3,12 @@ import Link from "next/link";
 import { AlertTriangle, ArrowRight, Phone } from "lucide-react";
 import ServiceHero from "@/components/services/ServiceHero";
 import EstimateRequest from "@/components/EstimateRequest";
+import {
+  createFaqJsonLd,
+  createPageMetadata,
+  createServiceJsonLd,
+  serializeJsonLd,
+} from "@/lib/seo";
 
 const priorities = [
   {
@@ -74,19 +80,38 @@ const faqs = [
   },
 ];
 
-export const metadata: Metadata = {
-  title: "Storm Cleanup and Tree Damage Service",
+export const metadata: Metadata = createPageMetadata({
+  title: "Storm Cleanup and Tree Damage Service in Metro East, Illinois",
   description:
-    "Metro East Tree Pros provides safety-focused storm cleanup for fallen trees, damaged limbs, blocked access, and debris throughout the Metro East.",
-};
+    "Safety-focused storm cleanup for fallen trees, damaged limbs, blocked access, and debris throughout the Metro East, Illinois.",
+  path: "/services/storm-cleanup",
+});
 
 export default function StormCleanupPage() {
   return (
     <main className="bg-white text-gray-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeJsonLd(
+            createServiceJsonLd({
+              name: "Storm Cleanup and Tree Damage Service",
+              description:
+                "Safety-focused storm cleanup for fallen trees, damaged limbs, blocked access, and debris throughout the Metro East, Illinois.",
+              path: "/services/storm-cleanup",
+            }),
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(createFaqJsonLd(faqs)) }}
+      />
       <ServiceHero
         title="Storm Cleanup & Tree Damage Service"
         subtitle="Safety-focused help for fallen trees, damaged limbs, blocked access, and the cleanup that helps your Metro East property recover."
-        image="/images/services/tree-removal-hero.jpg"
+        image="/images/services/storm-cleanup-hero.jpg"
+        imageAlt="Professional crew clearing storm-damaged branches from a residential driveway"
       />
 
       <section className="py-20 sm:py-24">

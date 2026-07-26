@@ -3,22 +3,26 @@ import "./globals.css";
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { localBusinessJsonLd, serializeJsonLd, siteName, siteUrl } from "@/lib/seo";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Metro East Tree Pros",
+    default: "Metro East Tree Pros | Tree Service in Metro East, Illinois",
     template: "%s | Metro East Tree Pros",
   },
   description:
     "Professional tree removal, tree trimming, stump grinding, storm cleanup, and emergency tree service throughout the Metro East.",
-  keywords: [
-    "Tree Removal",
-    "Tree Trimming",
-    "Stump Grinding",
-    "Storm Cleanup",
-    "Emergency Tree Service",
-    "Metro East",
-  ],
+  applicationName: siteName,
+  robots: {
+    index: true,
+    follow: true,
+  },
+  openGraph: {
+    siteName,
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -29,6 +33,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="bg-white pb-20 text-gray-900 antialiased lg:pb-0">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: serializeJsonLd(localBusinessJsonLd) }}
+        />
         <Navbar />
 
         {children}

@@ -1,14 +1,73 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import ServiceHero from "@/components/services/ServiceHero";
 import EstimateRequest from "@/components/EstimateRequest";
+import {
+  createFaqJsonLd,
+  createPageMetadata,
+  createServiceJsonLd,
+  serializeJsonLd,
+} from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Tree Removal in Metro East, Illinois",
+  description:
+    "Professional tree removal for hazardous, storm-damaged, or unwanted trees throughout the Metro East, Illinois.",
+  path: "/services/tree-removal",
+});
+
+const faqs = [
+  {
+    question: "Do I need to be home during the tree removal?",
+    answer:
+      "Not always. Depending on the project, arrangements can often be made without you being present. We'll communicate the plan with you ahead of time.",
+  },
+  {
+    question: "How long does tree removal usually take?",
+    answer:
+      "The timeline depends on the size, location, and complexity of the tree. Many residential projects can be completed in a single day.",
+  },
+  {
+    question: "Can you remove trees close to my house?",
+    answer:
+      "Yes. Trees near homes, garages, fences, and other structures require careful planning to help protect the surrounding property during removal.",
+  },
+  {
+    question: "What happens to the wood and debris?",
+    answer:
+      "Cleanup is included with the project. Branches and debris are removed, leaving the work area clean and ready to use.",
+  },
+  {
+    question: "Do you offer free estimates?",
+    answer: "Yes. Contact us to discuss your project and request a free estimate.",
+  },
+];
 
 export default function TreeRemovalPage() {
   return (
     <main className="bg-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeJsonLd(
+            createServiceJsonLd({
+              name: "Tree Removal",
+              description:
+                "Professional tree removal for hazardous, storm-damaged, or unwanted trees throughout the Metro East, Illinois.",
+              path: "/services/tree-removal",
+            }),
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(createFaqJsonLd(faqs)) }}
+      />
       <ServiceHero
         title="Professional Tree Removal"
         subtitle="Whether you're dealing with a dead tree, storm damage, or a tree that's become a safety concern, Metro East Tree Pros makes the removal process simple, safe, and stress-free."
         image="/images/services/tree-removal-hero.jpg"
+        imageAlt="Tree removal service scene"
       />
 
       <section className="py-24">
@@ -276,35 +335,9 @@ export default function TreeRemovalPage() {
     </div>
 
     <div className="space-y-6">
-      {[
-        {
-          question: "Do I need to be home during the tree removal?",
-          answer:
-            "Not always. Depending on the project, arrangements can often be made without you being present. We'll communicate the plan with you ahead of time.",
-        },
-        {
-          question: "How long does tree removal usually take?",
-          answer:
-            "The timeline depends on the size, location, and complexity of the tree. Many residential projects can be completed in a single day.",
-        },
-        {
-          question: "Can you remove trees close to my house?",
-          answer:
-            "Yes. Trees near homes, garages, fences, and other structures require careful planning to help protect the surrounding property during removal.",
-        },
-        {
-          question: "What happens to the wood and debris?",
-          answer:
-            "Cleanup is included with the project. Branches and debris are removed, leaving the work area clean and ready to use.",
-        },
-        {
-          question: "Do you offer free estimates?",
-          answer:
-            "Yes. Contact us to discuss your project and request a free estimate.",
-        },
-      ].map((faq, index) => (
+      {faqs.map((faq) => (
         <details
-          key={index}
+          key={faq.question}
           className="group rounded-3xl border border-gray-200 bg-white p-8 shadow-sm transition hover:shadow-lg"
         >
           <summary className="cursor-pointer list-none text-xl font-bold text-gray-900 flex items-center justify-between">

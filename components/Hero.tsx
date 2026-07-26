@@ -6,10 +6,11 @@ export default function Hero() {
   return (
     <section className="relative isolate min-h-[80vh] overflow-hidden">
       <Image
-        src="/images/hero.jpg"
-        alt="Professional tree service crew at work"
+        src="/images/home/home-hero.jpg"
+        alt="Professional tree crew arriving at a suburban property with organized equipment"
         fill
         priority
+        sizes="100vw"
         className="object-cover"
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/45" />

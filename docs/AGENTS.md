@@ -434,6 +434,66 @@ tree-service provider.
   accurately represents the service. If a temporary reuse is unavoidable,
   record the needed asset replacement.
 
+## Image Direction
+
+Every image must feel like it belongs to the Metro East Tree Pros brand and
+must follow the sitewide image rules in `IMAGE_STRATEGY.md`.
+
+### Style
+
+- Use photorealistic imagery with a modern, credible local-service feel.
+- Prefer modern suburban homes, mature trees, and clean properties in summer
+  or early-fall conditions with bright natural daylight.
+- When crews are visible, show professional workers wearing matching Metro
+  East Tree Pros shirts. Use clean white hard hats where the work requires
+  them.
+- Show modern trucks and equipment that look organized, well maintained, and
+  appropriate to the service.
+- Avoid stock-photo styling, watermarks, oversized logos, embedded text, and
+  artificial-looking imagery.
+- Do not imply that people, homes, trucks, crews, or locations belong to Metro
+  East Tree Pros unless the business has approved that claim.
+
+### Hero Images
+
+- Every major page requires a unique hero image. Never reuse a hero image.
+- Never reuse the homepage hero on a service or location page, or one service
+  hero for another service.
+- Use distinct camera angles and compositions while maintaining a consistent
+  editing style, lighting quality, and natural green/slate color palette.
+- Preserve a clear, darker copy-safe area for the hero heading and CTA on both
+  desktop and mobile crops.
+- If a suitable approved image is unavailable, use the branded visual fallback
+  defined in `IMAGE_STRATEGY.md` and record the missing asset. Do not duplicate
+  another page's hero.
+
+### Finished Work Images
+
+- Show a freshly cleaned yard, healthy trees, and fresh mulch where it is
+  appropriate to the documented project.
+- If people are included, they should appear naturally comfortable and should
+  not be presented as customers or homeowners without permission.
+- Keep equipment staged safely and professionally; cleanup and care for the
+  property should be visible where that is part of the service story.
+
+### Service Images
+
+- **Tree Removal:** a large mature tree being safely removed with a controlled
+  work area.
+- **Tree Trimming:** an arborist trimming a healthy mature tree with sensible
+  access and appropriate PPE.
+- **Stump Grinding:** a grinder actively removing a stump with realistic wood
+  chips and a clean surrounding work area.
+- **Emergency Service:** a storm-damaged tree with a crew securing the area;
+  never show unsafe power-line proximity or active danger.
+
+### Location Pages
+
+- Location pages may share this visual style, but every city must use a unique
+  home, tree, and background.
+- Do not name or visually associate a city with an image unless the location
+  is approved and factually supported.
+
 ## Metadata Standards
 
 - Add route-level metadata when creating or materially revising public pages.

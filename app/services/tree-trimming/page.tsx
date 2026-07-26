@@ -1,6 +1,20 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import ServiceHero from "@/components/services/ServiceHero";
 import EstimateRequest from "@/components/EstimateRequest";
+import {
+  createFaqJsonLd,
+  createPageMetadata,
+  createServiceJsonLd,
+  serializeJsonLd,
+} from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Tree Trimming and Pruning in Metro East, Illinois",
+  description:
+    "Professional tree trimming and pruning for healthier trees, safer properties, and practical clearance throughout the Metro East, Illinois.",
+  path: "/services/tree-trimming",
+});
 
 const benefits = [
   {
@@ -86,10 +100,28 @@ const faqs = [
 export default function TreeTrimmingPage() {
   return (
     <main className="bg-white text-gray-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeJsonLd(
+            createServiceJsonLd({
+              name: "Tree Trimming and Pruning",
+              description:
+                "Professional tree trimming and pruning for healthier trees, safer properties, and practical clearance throughout the Metro East, Illinois.",
+              path: "/services/tree-trimming",
+            }),
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(createFaqJsonLd(faqs)) }}
+      />
       <ServiceHero
         title="Professional Tree Trimming & Pruning"
         subtitle="Thoughtful pruning for healthier trees, safer properties, and a landscape that looks cared for in every season."
         image="/images/services/tree-trimming-hero.jpg"
+        imageAlt="Tree trimming and pruning service scene"
       />
 
       <section className="py-20 sm:py-24">

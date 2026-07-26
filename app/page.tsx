@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Contact from "../components/Contact";
 import Hero from "../components/Hero";
 import Reviews from "../components/Reviews";
@@ -6,6 +7,14 @@ import Stats from "../components/Stats";
 import WhyChooseUs from "../components/WhyChooseUs";
 import Link from "next/link";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Professional Tree Service in Metro East, Illinois",
+  description:
+    "Metro East Tree Pros provides professional tree removal, trimming, stump grinding, storm cleanup, and emergency tree service for local homes and businesses.",
+  path: "/",
+});
 
 export default function Home() {
   return (

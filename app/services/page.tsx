@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   TreePine,
@@ -8,6 +9,14 @@ import {
   ArrowRight,
 } from "lucide-react";
 import EstimateRequest from "@/components/EstimateRequest";
+import { createPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Tree Services in Metro East, Illinois",
+  description:
+    "Explore professional tree removal, trimming, stump grinding, storm cleanup, and emergency tree service from Metro East Tree Pros.",
+  path: "/services",
+});
 
 const services = [
   {

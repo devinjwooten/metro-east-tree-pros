@@ -1,7 +1,21 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Check, Phone } from "lucide-react";
 import ServiceHero from "@/components/services/ServiceHero";
 import EstimateRequest from "@/components/EstimateRequest";
+import {
+  createFaqJsonLd,
+  createPageMetadata,
+  createServiceJsonLd,
+  serializeJsonLd,
+} from "@/lib/seo";
+
+export const metadata: Metadata = createPageMetadata({
+  title: "Stump Grinding in Metro East, Illinois",
+  description:
+    "Clear unwanted stumps with professional stump grinding that helps restore a safer, more usable Metro East property.",
+  path: "/services/stump-grinding",
+});
 
 const benefits = [
   {
@@ -83,10 +97,28 @@ const faqs = [
 export default function StumpGrindingPage() {
   return (
     <main className="bg-white text-gray-900">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeJsonLd(
+            createServiceJsonLd({
+              name: "Stump Grinding",
+              description:
+                "Professional stump grinding to help restore a safer, more usable property throughout the Metro East, Illinois.",
+              path: "/services/stump-grinding",
+            }),
+          ),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(createFaqJsonLd(faqs)) }}
+      />
       <ServiceHero
         title="Professional Stump Grinding"
         subtitle="Clear away unwanted stumps with a clean, practical solution from Metro East Tree Pros."
-        image="/images/services/tree-removal-hero.jpg"
+        image="/images/services/stump-grinding-hero.jpg"
+        imageAlt="Professional stump grinder removing a stump from a landscaped yard"
       />
 
       <section className="py-20 sm:py-24">

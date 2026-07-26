@@ -5,25 +5,35 @@ import { ArrowRight, Phone } from "lucide-react";
 type Props = {
   title: string;
   subtitle: string;
-  image: string;
+  image?: string;
+  imageAlt?: string;
 };
 
 export default function ServiceHero({
   title,
   subtitle,
   image,
+  imageAlt,
 }: Props) {
   return (
-    <section className="relative isolate min-h-[80vh] overflow-hidden">
-      <Image
-        src={image}
-        alt={title}
-        fill
-        priority
-        className="object-cover"
-      />
+    <section className="relative isolate min-h-[80vh] overflow-hidden bg-slate-950">
+      {image ? (
+        <Image
+          src={image}
+          alt={imageAlt ?? ""}
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
+      ) : (
+        <div
+          className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(74,222,128,0.2),_transparent_38%),linear-gradient(135deg,_#052e16_0%,_#0f172a_52%,_#111827_100%)]"
+          aria-hidden="true"
+        />
+      )}
 
-      <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/65 to-black/45" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/70 to-black/45" />
 
       <div className="relative mx-auto flex min-h-[80vh] max-w-7xl items-center px-6">
         <div className="max-w-3xl">
@@ -32,11 +42,11 @@ export default function ServiceHero({
             PROFESSIONAL TREE SERVICE
           </p>
 
-          <h1 className="mt-6 text-5xl font-black text-white md:text-7xl">
+          <h1 className="mt-6 text-5xl font-black leading-[1.05] text-white sm:text-6xl lg:text-7xl">
             {title}
           </h1>
 
-          <p className="mt-8 text-xl leading-9 text-gray-200">
+          <p className="mt-8 text-lg leading-8 text-gray-200 sm:text-xl sm:leading-9">
             {subtitle}
           </p>
 
