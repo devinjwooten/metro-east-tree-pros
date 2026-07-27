@@ -14,6 +14,7 @@ export default function Mission() {
               alt="Tree service professionals"
               width={900}
               height={1000}
+              sizes="(min-width: 1024px) 50vw, 100vw"
               className="h-full w-full object-cover transition duration-700 hover:scale-105"
             />
           </div>

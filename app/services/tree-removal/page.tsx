@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import ServiceHero from "@/components/services/ServiceHero";
 import EstimateRequest from "@/components/EstimateRequest";
+import RelatedServices from "@/components/RelatedServices";
 import {
   createFaqJsonLd,
   createPageMetadata,
@@ -14,6 +16,8 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Professional tree removal for hazardous, storm-damaged, or unwanted trees throughout the Metro East, Illinois.",
   path: "/services/tree-removal",
+  image: "/images/services/tree-removal-hero.jpg",
+  imageAlt: "Tree-service crew completing a controlled tree removal beside a residential property",
 });
 
 const faqs = [
@@ -232,6 +236,7 @@ export default function TreeRemovalPage() {
           alt="Professional tree removal"
           width={900}
           height={700}
+          sizes="(min-width: 1024px) 50vw, 100vw"
           className="rounded-[32px] shadow-2xl"
         />
 
@@ -356,9 +361,11 @@ export default function TreeRemovalPage() {
     </div>
   </section>
 
+      <RelatedServices currentService="treeRemoval" />
+
       <section className="bg-slate-50 py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <EstimateRequest />
+          <EstimateRequest defaultService="Tree Removal" />
         </div>
       </section>
 
@@ -379,19 +386,19 @@ export default function TreeRemovalPage() {
     </p>
 
     <div className="mt-12 flex flex-col justify-center gap-4 sm:flex-row">
-      <a
-        href="/contact"
-        className="rounded-xl bg-white px-8 py-4 text-lg font-bold text-green-700 transition hover:bg-gray-100"
+      <Link
+        href="#estimate"
+        className="rounded-xl bg-white px-8 py-4 text-lg font-bold text-green-700 transition hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-200"
       >
-        Request a Free Estimate
-      </a>
+        Get a Free Estimate
+      </Link>
 
-      <a
+      <Link
         href="tel:3144747087"
-        className="rounded-xl border-2 border-white px-8 py-4 text-lg font-bold transition hover:bg-white hover:text-green-700"
+        className="rounded-xl border-2 border-white px-8 py-4 text-lg font-bold transition hover:bg-white hover:text-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
       >
         Call Now
-      </a>
+      </Link>
     </div>
   </div>
 </section>

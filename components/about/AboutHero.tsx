@@ -42,37 +42,37 @@ export default function AboutHero() {
             completion.
           </p>
 
-          <div className="mt-12 flex flex-wrap gap-5">
+          <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-5">
             <Link
               href="/contact"
               className="inline-flex items-center rounded-xl bg-green-700 px-8 py-5 text-lg font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-green-800"
             >
               Request Free Estimate
-              <ArrowRight className="ml-3 h-5 w-5" />
+              <ArrowRight className="ml-3 h-5 w-5" aria-hidden="true" />
             </Link>
 
             <Link
               href="tel:3144747087"
               className="inline-flex items-center rounded-xl border border-white/20 bg-white/10 px-8 py-5 text-lg font-semibold text-white backdrop-blur transition-all duration-300 hover:bg-white/20"
             >
-              <Phone className="mr-3 h-5 w-5" />
+              <Phone className="mr-3 h-5 w-5" aria-hidden="true" />
               (314) 474-7087
             </Link>
           </div>
 
           <div className="mt-16 grid gap-6 sm:grid-cols-3">
             <div className="flex items-center gap-3 text-white">
-              <ShieldCheck className="h-7 w-7 text-green-400" />
+              <ShieldCheck className="h-7 w-7 text-green-400" aria-hidden="true" />
               <span>Professional Standards</span>
             </div>
 
             <div className="flex items-center gap-3 text-white">
-              <Clock3 className="h-7 w-7 text-green-400" />
+              <Clock3 className="h-7 w-7 text-green-400" aria-hidden="true" />
               <span>Fast Response</span>
             </div>
 
             <div className="flex items-center gap-3 text-white">
-              <CheckCircle2 className="h-7 w-7 text-green-400" />
+              <CheckCircle2 className="h-7 w-7 text-green-400" aria-hidden="true" />
               <span>Free Estimates</span>
             </div>
           </div>

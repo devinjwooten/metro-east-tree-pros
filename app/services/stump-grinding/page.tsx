@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight, Check, Phone } from "lucide-react";
 import ServiceHero from "@/components/services/ServiceHero";
 import EstimateRequest from "@/components/EstimateRequest";
+import RelatedServices from "@/components/RelatedServices";
 import {
   createFaqJsonLd,
   createPageMetadata,
@@ -15,6 +16,8 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Clear unwanted stumps with professional stump grinding that helps restore a safer, more usable Metro East property.",
   path: "/services/stump-grinding",
+  image: "/images/services/stump-grinding-hero.jpg",
+  imageAlt: "Professional stump grinder removing a stump from a landscaped yard",
 });
 
 const benefits = [
@@ -341,9 +344,11 @@ export default function StumpGrindingPage() {
         </div>
       </section>
 
+      <RelatedServices currentService="stumpGrinding" />
+
       <section className="bg-slate-50 py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <EstimateRequest />
+          <EstimateRequest defaultService="Stump Grinding" />
         </div>
       </section>
 
@@ -361,10 +366,10 @@ export default function StumpGrindingPage() {
           </p>
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
             <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 text-lg font-bold text-green-700 transition hover:bg-green-50"
+              href="#estimate"
+              className="inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 text-lg font-bold text-green-700 transition hover:bg-green-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-200"
             >
-              Request a Free Estimate
+              Get a Free Estimate
               <ArrowRight className="ml-3 h-5 w-5" aria-hidden="true" />
             </Link>
             <Link

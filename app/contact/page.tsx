@@ -8,6 +8,8 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Call Metro East Tree Pros or email us to discuss tree removal, trimming, stump grinding, storm cleanup, or emergency tree service in the Metro East.",
   path: "/contact",
+  image: "/images/contact/contact-hero.jpg",
+  imageAlt: "Tree-service crew member speaking with a homeowner in a clean finished yard",
 });
 
 export default function ContactPage() {

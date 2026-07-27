@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Check, Phone } from "lucide-react";
 
 export default function CallToAction() {
   return (
@@ -8,8 +8,9 @@ export default function CallToAction() {
       {/* Background */}
       <Image
         src="/images/about/cta-bg.jpg"
-        alt="Tree service"
+        alt=""
         fill
+        sizes="100vw"
         className="object-cover"
       />
 
@@ -33,28 +34,35 @@ export default function CallToAction() {
             your first call to the final cleanup.
           </p>
 
-          <div className="mt-12 flex flex-col justify-center gap-5 sm:flex-row">
+          <div className="mt-12 flex flex-col justify-center gap-4 sm:flex-row sm:gap-5">
             <Link
               href="/contact"
               className="inline-flex items-center justify-center rounded-xl bg-green-700 px-10 py-5 text-lg font-bold text-white transition-all duration-300 hover:-translate-y-1 hover:bg-green-800"
             >
               Request Free Estimate
-              <ArrowRight className="ml-3 h-5 w-5" />
+              <ArrowRight className="ml-3 h-5 w-5" aria-hidden="true" />
             </Link>
 
             <Link
               href="tel:3144747087"
               className="inline-flex items-center justify-center rounded-xl border border-white/30 bg-white/10 px-10 py-5 text-lg font-semibold text-white backdrop-blur transition-all duration-300 hover:bg-white/20"
             >
-              <Phone className="mr-3 h-5 w-5" />
+              <Phone className="mr-3 h-5 w-5" aria-hidden="true" />
               (314) 474-7087
             </Link>
           </div>
 
           <div className="mt-16 grid gap-6 border-t border-white/20 pt-10 text-center text-sm font-medium text-gray-300 sm:grid-cols-3">
-            <div>✓ Free Estimates</div>
-            <div>✓ Fast Response</div>
-            <div>✓ Professional Service</div>
+            {[
+              "Free Estimates",
+              "Fast Response",
+              "Professional Service",
+            ].map((item) => (
+              <div key={item} className="flex items-center justify-center gap-2">
+                <Check className="h-4 w-4 text-green-400" aria-hidden="true" />
+                {item}
+              </div>
+            ))}
           </div>
         </div>
       </div>

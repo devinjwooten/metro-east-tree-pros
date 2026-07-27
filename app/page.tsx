@@ -1,24 +1,31 @@
 import type { Metadata } from "next";
 import Contact from "../components/Contact";
+import HomeFaqs, { homeFaqs } from "../components/HomeFaqs";
 import Hero from "../components/Hero";
-import Reviews from "../components/Reviews";
 import Services from "../components/Services";
 import Stats from "../components/Stats";
 import WhyChooseUs from "../components/WhyChooseUs";
 import Link from "next/link";
 import { ArrowRight, MapPin, Phone } from "lucide-react";
-import { createPageMetadata } from "@/lib/seo";
+import { locations } from "@/lib/locations";
+import { createFaqJsonLd, createPageMetadata, serializeJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
   title: "Professional Tree Service in Metro East, Illinois",
   description:
     "Metro East Tree Pros provides professional tree removal, trimming, stump grinding, storm cleanup, and emergency tree service for local homes and businesses.",
   path: "/",
+  image: "/images/home/home-hero.jpg",
+  imageAlt: "Professional tree crew arriving at a suburban property with organized equipment",
 });
 
 export default function Home() {
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(createFaqJsonLd(homeFaqs)) }}
+      />
       <Hero />
       <Services />
       <WhyChooseUs />
@@ -45,32 +52,25 @@ export default function Home() {
               Serving Nearby
             </p>
             <div className="mt-7 grid gap-3 sm:grid-cols-2">
-              {[
-                "Belleville",
-                "O'Fallon",
-                "Edwardsville",
-                "Collinsville",
-                "Fairview Heights",
-                "Swansea",
-                "Shiloh",
-                "Columbia",
-                "Waterloo",
-                "Nearby Metro East communities",
-              ].map((city) => (
-                <p
-                  key={city}
-                  className="flex items-center gap-3 rounded-2xl border border-gray-100 px-5 py-4 font-semibold text-gray-700 shadow-sm"
+              {locations.map((location) => (
+                <Link
+                  key={location.slug}
+                  href={`/locations/${location.slug}`}
+                  className="group flex items-center justify-between gap-3 rounded-2xl border border-gray-100 px-5 py-4 font-semibold text-gray-700 shadow-sm transition hover:border-green-200 hover:bg-green-50/40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700"
                 >
-                  <MapPin className="h-5 w-5 text-green-700" aria-hidden="true" />
-                  {city}
-                </p>
+                  <span className="flex items-center gap-3">
+                    <MapPin className="h-5 w-5 text-green-700" aria-hidden="true" />
+                    {location.city}
+                  </span>
+                  <ArrowRight className="h-4 w-4 text-green-700 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                </Link>
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      <Reviews />
+      <HomeFaqs />
       <Contact />
 
       <section className="bg-green-700 py-20 text-white sm:py-24">

@@ -13,6 +13,11 @@ const serviceAreaNames = [
   "Shiloh",
   "Columbia",
   "Waterloo",
+  "Glen Carbon",
+  "Granite City",
+  "Maryville",
+  "Troy",
+  "Highland",
 ];
 
 const serviceAreas = serviceAreaNames.map((name) => ({
@@ -34,17 +39,20 @@ type ServiceSchemaInput = {
   name: string;
   description: string;
   path: string;
+  serviceArea?: string;
 };
 
 type PageMetadataInput = {
   title: string;
   description: string;
   path: string;
+  image?: string;
+  imageAlt?: string;
 };
 
 export const localBusinessJsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["LocalBusiness", "ProfessionalService"],
   "@id": `${siteUrl}/#localbusiness`,
   name: siteName,
   url: siteUrl,
@@ -59,8 +67,16 @@ export function createPageMetadata({
   title,
   description,
   path,
+  image,
+  imageAlt,
 }: PageMetadataInput): Metadata {
   const url = new URL(path, siteUrl).toString();
+  const socialImage = image
+    ? {
+        url: new URL(image, siteUrl).toString(),
+        alt: imageAlt ?? title,
+      }
+    : undefined;
 
   return {
     title,
@@ -75,6 +91,13 @@ export function createPageMetadata({
       siteName,
       locale: "en_US",
       type: "website",
+      images: socialImage ? [socialImage] : undefined,
+    },
+    twitter: {
+      card: socialImage ? "summary_large_image" : "summary",
+      title: `${title} | ${siteName}`,
+      description,
+      images: socialImage ? [socialImage.url] : undefined,
     },
   };
 }
@@ -83,6 +106,7 @@ export function createServiceJsonLd({
   name,
   description,
   path,
+  serviceArea,
 }: ServiceSchemaInput) {
   return {
     "@context": "https://schema.org",
@@ -94,7 +118,19 @@ export function createServiceJsonLd({
     provider: {
       "@id": `${siteUrl}/#localbusiness`,
     },
-    areaServed: serviceAreas,
+    areaServed: serviceArea
+      ? [
+          {
+            "@type": "City",
+            name: serviceArea,
+            address: {
+              "@type": "PostalAddress",
+              addressRegion: "IL",
+              addressCountry: "US",
+            },
+          },
+        ]
+      : serviceAreas,
   };
 }
 

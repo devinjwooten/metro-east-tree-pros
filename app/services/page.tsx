@@ -75,6 +75,13 @@ export default function ServicesPage() {
             Metro East Tree Pros makes the process simple with responsive
             communication and dependable service.
           </p>
+          <Link
+            href="#estimate"
+            className="mt-10 inline-flex items-center justify-center rounded-xl bg-white px-8 py-4 text-lg font-bold text-green-800 transition hover:bg-green-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-200"
+          >
+            Get a Free Estimate
+            <ArrowRight className="ml-3 h-5 w-5" aria-hidden="true" />
+          </Link>
         </div>
       </section>
 

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { AlertTriangle, ArrowRight, Phone } from "lucide-react";
 import ServiceHero from "@/components/services/ServiceHero";
 import EstimateRequest from "@/components/EstimateRequest";
+import RelatedServices from "@/components/RelatedServices";
 import {
   createFaqJsonLd,
   createPageMetadata,
@@ -85,6 +86,8 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Safety-focused storm cleanup for fallen trees, damaged limbs, blocked access, and debris throughout the Metro East, Illinois.",
   path: "/services/storm-cleanup",
+  image: "/images/services/storm-cleanup-hero.jpg",
+  imageAlt: "Professional crew clearing storm-damaged branches from a residential driveway",
 });
 
 export default function StormCleanupPage() {
@@ -229,9 +232,11 @@ export default function StormCleanupPage() {
         </div>
       </section>
 
+      <RelatedServices currentService="stormCleanup" />
+
       <section className="bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <EstimateRequest />
+          <EstimateRequest defaultService="Storm Cleanup" />
         </div>
       </section>
 
@@ -257,10 +262,10 @@ export default function StormCleanupPage() {
               Call (314) 474-7087
             </Link>
             <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-xl border-2 border-white px-8 py-4 text-lg font-bold transition hover:bg-white hover:text-green-700"
+              href="#estimate"
+              className="inline-flex items-center justify-center rounded-xl border-2 border-white px-8 py-4 text-lg font-bold transition hover:bg-white hover:text-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
-              Request a Free Estimate
+              Get a Free Estimate
               <ArrowRight className="ml-3 h-5 w-5" aria-hidden="true" />
             </Link>
           </div>

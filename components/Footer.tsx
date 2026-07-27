@@ -79,7 +79,7 @@ export default function Footer() {
             </div>
 
             <div className="flex items-start gap-3">
-              <MapPin size={18} className="mt-1" />
+              <MapPin size={18} className="mt-1" aria-hidden="true" />
               <span>
                 Serving Belleville, O&apos;Fallon,
                 Collinsville, Edwardsville,

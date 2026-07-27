@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, Menu, Phone, X } from "lucide-react";
@@ -25,6 +25,21 @@ const navLinkClassName =
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  useEffect(() => {
+    if (!isMobileMenuOpen) {
+      return;
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsMobileMenuOpen(false);
+      }
+    }
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isMobileMenuOpen]);
+
   return (
     <>
       <header className="fixed inset-x-0 top-0 z-50 border-b border-gray-200 bg-white/95 backdrop-blur">
@@ -38,7 +53,7 @@ export default function Navbar() {
               alt="Metro East Tree Pros"
               width={64}
               height={64}
-              priority
+              sizes="64px"
             />
             <div className="hidden min-w-0 sm:block">
               <span className="block truncate text-xl font-bold text-green-800">
@@ -108,6 +123,7 @@ export default function Navbar() {
               type="button"
               aria-expanded={isMobileMenuOpen}
               aria-controls="mobile-navigation"
+              aria-label={isMobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
               onClick={() => setIsMobileMenuOpen((isOpen) => !isOpen)}
               className="flex h-11 items-center justify-center rounded-xl border border-gray-200 px-4 font-bold text-gray-900 transition hover:border-green-300 hover:bg-green-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700"
             >
@@ -172,7 +188,7 @@ export default function Navbar() {
         </div>
       </header>
 
-      <div className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-px border-t border-gray-200 bg-white p-2 shadow-[0_-8px_24px_rgba(15,23,42,0.12)] lg:hidden">
+      <div className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-px border-t border-gray-200 bg-white p-2 pb-[calc(0.5rem+env(safe-area-inset-bottom))] shadow-[0_-8px_24px_rgba(15,23,42,0.12)] lg:hidden">
         <a
           href="tel:3144747087"
           className="inline-flex min-h-12 items-center justify-center rounded-xl bg-green-900 px-4 py-3 font-bold text-white transition hover:bg-green-950 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-700"

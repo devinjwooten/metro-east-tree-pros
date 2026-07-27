@@ -3,27 +3,27 @@ import Image from "next/image";
 const projects = [
   {
     image: "/images/projects/project1.jpg",
-    title: "Tree Removal Example",
+    title: "Tree Removal",
   },
   {
     image: "/images/projects/project2.jpg",
-    title: "Tree Trimming Example",
+    title: "Tree Trimming",
   },
   {
     image: "/images/projects/project3.jpg",
-    title: "Storm Cleanup Example",
+    title: "Storm Cleanup",
   },
   {
     image: "/images/projects/project4.jpg",
-    title: "Stump Grinding Example",
+    title: "Stump Grinding",
   },
   {
     image: "/images/projects/project5.jpg",
-    title: "Emergency Tree Service Example",
+    title: "Emergency Tree Service",
   },
   {
     image: "/images/projects/project6.jpg",
-    title: "Property Cleanup Example",
+    title: "Property Cleanup",
   },
 ];
 
@@ -44,8 +44,9 @@ function ProjectCard({
     >
       <Image
         src={image}
-        alt={`Sample visual for ${title.toLowerCase()}`}
+        alt={`Representative visual of ${title.toLowerCase()} work`}
         fill
+        sizes={large ? "(min-width: 1024px) 66vw, 100vw" : "(min-width: 1024px) 33vw, 100vw"}
         className="object-cover transition duration-700 group-hover:scale-110"
       />
 
@@ -53,12 +54,12 @@ function ProjectCard({
 
       <div className="absolute bottom-0 left-0 p-8 text-white">
         <span className="rounded-full bg-green-600 px-3 py-1 text-xs font-semibold uppercase tracking-wider">
-          Sample Visual
+          Representative Visual
         </span>
 
         <h3 className="mt-4 text-3xl font-bold">{title}</h3>
 
-        <p className="mt-2 text-gray-200">Replace with a verified local project before launch.</p>
+        <p className="mt-2 text-gray-200">An illustrative view of the service situation.</p>
       </div>
     </div>
   );
@@ -79,9 +80,8 @@ export default function Gallery() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg text-gray-600">
-            These sample visuals illustrate the types of tree-service projects
-            Metro East Tree Pros handles. Replace them with approved project
-            photos and verified details before launch.
+            These representative visuals illustrate the types of tree-service
+            situations Metro East Tree Pros is equipped to address.
           </p>
         </div>
 

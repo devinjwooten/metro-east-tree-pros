@@ -1,12 +1,23 @@
 import Image from "next/image";
-import { BadgeDollarSign, Check, HardHat, ShieldCheck, Sparkles, Wrench } from "lucide-react";
+import {
+  BadgeCheck,
+  Building2,
+  Check,
+  HeartHandshake,
+  ShieldCheck,
+  Sparkles,
+  Wrench,
+  Zap,
+} from "lucide-react";
 
 const features = [
-  { icon: HardHat, title: "Experienced crews", text: "A capable team that understands tree work and the property around it." },
-  { icon: ShieldCheck, title: "Safety-first approach", text: "Every project starts with a thoughtful plan for people, structures, and access." },
-  { icon: Wrench, title: "Modern equipment", text: "The right tools help us work efficiently while staying precise and controlled." },
-  { icon: Sparkles, title: "Complete cleanup", text: "We leave your work area clean so you can enjoy the result, not manage the mess." },
-  { icon: BadgeDollarSign, title: "Honest pricing", text: "Clear estimates and straightforward guidance before work begins." },
+  { icon: ShieldCheck, title: "Licensed & Insured", text: "A professional approach to the work and the property around it." },
+  { icon: BadgeCheck, title: "Free Estimates", text: "Practical guidance to help you understand the next best step." },
+  { icon: Zap, title: "Fast Response", text: "Clear communication when a tree concern needs timely attention." },
+  { icon: Wrench, title: "Professional Equipment", text: "The right tools help keep work controlled, efficient, and organized." },
+  { icon: Building2, title: "Residential & Commercial", text: "Thoughtful service for homes, businesses, and managed properties." },
+  { icon: Sparkles, title: "Complete Cleanup", text: "We leave the work area clean and ready for what comes next." },
+  { icon: HeartHandshake, title: "Customer Satisfaction", text: "A clear process built around your questions, property, and expectations." },
 ];
 
 export default function WhyChooseUs() {
@@ -16,9 +27,10 @@ export default function WhyChooseUs() {
         <div className="relative">
           <Image
             src="/images/crew.jpg"
-            alt="Metro East Tree Pros crew"
+            alt="Professional tree-service crew beside organized equipment"
             width={700}
             height={850}
+            sizes="(min-width: 1024px) 45vw, 100vw"
             className="aspect-[4/5] rounded-[2rem] object-cover shadow-2xl"
           />
           <div className="absolute -bottom-5 -right-3 rounded-2xl bg-green-700 p-6 text-white shadow-xl sm:-bottom-8 sm:-right-8">
@@ -36,8 +48,8 @@ export default function WhyChooseUs() {
           </h2>
           <p className="mt-7 text-lg leading-8 text-gray-600">
             We focus on a well-run experience from the first estimate through
-            final cleanup, with clear communication and respect for your home,
-            time, and landscape.
+            final cleanup, with safety-focused planning and respect for your
+            home, time, and landscape.
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
@@ -55,7 +67,7 @@ export default function WhyChooseUs() {
           </div>
           <p className="mt-7 flex items-center gap-3 font-semibold text-gray-700">
             <Check className="h-5 w-5 text-green-700" aria-hidden="true" />
-            Free estimates and practical recommendations for your property.
+            Safety-focused planning and practical recommendations for your property.
           </p>
         </div>
       </div>

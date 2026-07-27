@@ -8,10 +8,12 @@ import CallToAction from "@/components/about/CallToAction";
 import { createPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "About Metro East Tree Pros",
+  title: "About Our Metro East Tree Service Team",
   description:
-    "Learn how Metro East Tree Pros helps homeowners and businesses approach tree work with clear communication, safety-focused planning, and thorough cleanup.",
+    "Learn how Metro East Tree Pros helps homeowners and businesses across the Metro East approach tree work with clear communication, safety-focused planning, and thorough cleanup.",
   path: "/about",
+  image: "/images/about/about-hero.jpg",
+  imageAlt: "Professional tree-service crew standing beside organized equipment",
 });
 
 export default function AboutPage() {

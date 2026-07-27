@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
+import { locations } from "@/lib/locations";
 import { siteUrl } from "@/lib/seo";
 
 const routes = [
-  { path: "/", changeFrequency: "weekly", priority: 1 },
+  { path: "/", changeFrequency: "monthly", priority: 1 },
   { path: "/services", changeFrequency: "monthly", priority: 0.9 },
   { path: "/services/tree-removal", changeFrequency: "monthly", priority: 0.9 },
   { path: "/services/tree-trimming", changeFrequency: "monthly", priority: 0.9 },
@@ -15,7 +16,13 @@ const routes = [
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return routes.map((route) => ({
+  const locationRoutes = locations.map((location) => ({
+    path: `/locations/${location.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...routes, ...locationRoutes].map((route) => ({
     url: new URL(route.path, siteUrl).toString(),
     changeFrequency: route.changeFrequency,
     priority: route.priority,

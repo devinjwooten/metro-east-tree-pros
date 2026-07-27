@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ServiceHero from "@/components/services/ServiceHero";
 import EstimateRequest from "@/components/EstimateRequest";
+import RelatedServices from "@/components/RelatedServices";
 import {
   createFaqJsonLd,
   createPageMetadata,
@@ -14,6 +15,8 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Professional tree trimming and pruning for healthier trees, safer properties, and practical clearance throughout the Metro East, Illinois.",
   path: "/services/tree-trimming",
+  image: "/images/services/tree-trimming-hero.jpg",
+  imageAlt: "Arborist carefully pruning a mature tree at a residential property",
 });
 
 const benefits = [
@@ -353,9 +356,11 @@ export default function TreeTrimmingPage() {
         </div>
       </section>
 
+      <RelatedServices currentService="treeTrimming" />
+
       <section className="bg-slate-50 py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <EstimateRequest />
+          <EstimateRequest defaultService="Tree Trimming" />
         </div>
       </section>
 
@@ -374,10 +379,10 @@ export default function TreeTrimmingPage() {
           </p>
           <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
             <Link
-              href="/contact"
-              className="rounded-xl bg-white px-8 py-4 text-lg font-bold text-green-700 transition hover:bg-green-50"
+              href="#estimate"
+              className="rounded-xl bg-white px-8 py-4 text-lg font-bold text-green-700 transition hover:bg-green-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-200"
             >
-              Request a Free Estimate
+              Get a Free Estimate
             </Link>
             <Link
               href="tel:3144747087"

@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import ServiceHero from "@/components/services/ServiceHero";
 import EstimateRequest from "@/components/EstimateRequest";
+import RelatedServices from "@/components/RelatedServices";
 import {
   createFaqJsonLd,
   createPageMetadata,
@@ -20,6 +21,8 @@ export const metadata: Metadata = createPageMetadata({
   description:
     "Safety-focused emergency tree service for fallen trees, dangerous limbs, blocked access, and storm damage throughout the Metro East, Illinois.",
   path: "/services/emergency-tree-service",
+  image: "/images/services/emergency-tree-service-hero.jpg",
+  imageAlt: "Tree-service crew safely stabilizing a storm-damaged tree",
 });
 
 const urgentSituations = [
@@ -331,9 +334,11 @@ export default function EmergencyTreeServicePage() {
         </div>
       </section>
 
+      <RelatedServices currentService="emergencyTreeService" />
+
       <section className="bg-slate-50 py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-6">
-          <EstimateRequest />
+          <EstimateRequest defaultService="Emergency Tree Service" />
         </div>
       </section>
 
@@ -360,10 +365,10 @@ export default function EmergencyTreeServicePage() {
               Call (314) 474-7087
             </Link>
             <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-xl border-2 border-white px-8 py-4 text-lg font-bold transition hover:bg-white hover:text-green-700"
+              href="#estimate"
+              className="inline-flex items-center justify-center rounded-xl border-2 border-white px-8 py-4 text-lg font-bold transition hover:bg-white hover:text-green-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
-              Request a Free Estimate
+              Get a Free Estimate
               <ArrowRight className="ml-3 h-5 w-5" aria-hidden="true" />
             </Link>
           </div>

@@ -32,7 +32,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-white pb-20 text-gray-900 antialiased lg:pb-0">
+      <body className="bg-white pb-24 text-gray-900 antialiased lg:pb-0">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: serializeJsonLd(localBusinessJsonLd) }}

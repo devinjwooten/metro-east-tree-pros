@@ -50,21 +50,21 @@ export default function ServiceHero({
             {subtitle}
           </p>
 
-          <div className="mt-12 flex flex-wrap gap-5">
+          <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:gap-5">
             <Link
-              href="/contact"
-              className="inline-flex items-center rounded-xl bg-green-700 px-8 py-5 font-bold text-white transition hover:bg-green-800"
+              href="#estimate"
+              className="inline-flex items-center rounded-xl bg-green-700 px-8 py-5 font-bold text-white transition hover:bg-green-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-300"
             >
-              Request Free Estimate
+              Get a Free Estimate
 
-              <ArrowRight className="ml-3 h-5 w-5" />
+              <ArrowRight className="ml-3 h-5 w-5" aria-hidden="true" />
             </Link>
 
             <Link
               href="tel:3144747087"
-              className="inline-flex items-center rounded-xl border border-white/20 bg-white/10 px-8 py-5 font-semibold text-white backdrop-blur transition hover:bg-white/20"
+              className="inline-flex items-center rounded-xl border border-white/20 bg-white/10 px-8 py-5 font-semibold text-white backdrop-blur transition hover:bg-white/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
             >
-              <Phone className="mr-3 h-5 w-5" />
+              <Phone className="mr-3 h-5 w-5" aria-hidden="true" />
 
               (314) 474-7087
             </Link>
